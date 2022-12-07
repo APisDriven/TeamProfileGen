@@ -4,22 +4,28 @@ const questions = [
     {
         type: 'input',
         name: 'manager',
-        message: 'Team member managers name?',
+        message: 'What is you managers name?',
       },
       {
         type: 'input',
         name: 'id',
-        message: 'Team members employee ID?',
-      },
-      {
-        type: 'list',
-        name: 'email',
-        message: 'Team member email address?',
+        message: 'What is your employee ID?',
       },
       {
         type: 'input',
-        name: 'instructions',
-        message: 'Installation instructions?',
+        name: 'email',
+        message: 'What is your email address?',
+      },
+      {
+        type: 'input',
+        name: 'office number',
+        message: 'What is your office number?',
+      },
+      {
+        type: 'list',
+        name: 'role',
+        message: 'What type of employee would you like to add?',
+        choices: ['Engineer','Intern']
       },
       
 ]
