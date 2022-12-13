@@ -9,7 +9,6 @@ const Engineer = require(`./lib/Engineer`);
 const employees = [];
 
 const fs = require("fs");
-const { profile } = require('console');
 
 const generateHTML = require(`./utils/generateHTML`);
 
@@ -70,9 +69,9 @@ const init = async ()=> {
             }
         ]
 
-        const {employeeType} = await inquirere.prompt(employeeTypeQuestion);
+        const {employeeType} = await inquirer.prompt(employeeTypeQuestion);
 
-        if (employeeTyope === "none"){
+        if (employeeType === "none"){
             isTeamComplete = true;
         } else {
             if(employeeType === "engineer"){
@@ -95,7 +94,7 @@ const init = async ()=> {
 };
 
 const createManager = async()=>{
-    const manageQuestions = [
+    const managerQuestions = [
         {
             type: "input",
             message: "Enter Manager name:",
@@ -107,7 +106,7 @@ const createManager = async()=>{
             message: "Enter employee ID:",
             name: "id",
             validate: validateInput,
-        }
+        },
         {
             type: "input",
             message: "Enter work email:",
