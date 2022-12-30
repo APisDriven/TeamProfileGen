@@ -10,7 +10,6 @@ const generateHTML = (employees)=>{
     const HTML = [];
     
 
-    // 11:20
     HTML.push(
         employees
             .filter((employee)=>employee.getRole() === "Manager")
@@ -18,11 +17,11 @@ const generateHTML = (employees)=>{
     );
         employees
             .filter((employee)=>employee.getRole() === "Engineer")
-            .map((engineer)=>renderManager(engineer)
+            .map((engineer)=>renderEngineer(engineer)
     );
         employees
             .filter((employee)=>employee.getRole() === "Intern")
-            .map((intern)=>renderManager(intern)
+            .map((intern)=>renderIntern(intern)
     );
 
     return renderFullMarkdown(HTML.join(""));

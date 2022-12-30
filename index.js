@@ -39,7 +39,7 @@ const questions = [
         type: 'list',
         name: 'role',
         message: 'What type of employee would you like to add?',
-        choices: ['Engineer','Intern']
+        choices: ['Engineer','Intern','None']
       },
       
 ]
@@ -54,6 +54,8 @@ const validateInput = (userInput) => {
 
 const init = async ()=> {
     await createManager();
+
+    // create a team - function
 
     while(!isTeamComplete){
         const employeeTypeQuestion = [
@@ -111,6 +113,12 @@ const createManager = async()=>{
             type: "input",
             message: "Enter work email:",
             name: "email",
+            validate: validateInput,
+        },
+        {
+            type: "input",
+            message: "Enter Office Number:",
+            name: "officeNumber",
             validate: validateInput,
         }
     ];
@@ -193,5 +201,4 @@ const createIntern = async()=>{
 
 init();
 
-// team manager’s name, employee ID, email address, and office number
 

@@ -32,25 +32,6 @@ describe("Intern", () => {
         });
     });
     describe("method tests", () => {
-        // it("should return name when getName function is called", () => {
-        //     const intern = new Intern("Goofy",
-        //     "03",
-        //     "goofy@mouse.com",
-        //     "Clubhouse University");
-        //     expect(intern.getName()).toEqual("Goofy");
-        // });
-        // it("should return id when getId function is called", () => {
-        //     const intern = new Intern(mockIntern);
-        //     expect(intern.getId()).toEqual("03");
-        // });
-        // it("should return email when getEmail function is called", () => {
-        //     const intern = new Intern(mockIntern);
-        //     expect(intern.getEmail()).toEqual("goofy@mouse.com");
-        // });
-        // it("should return school when getSchool function is called", () => {
-        //     const intern = new Intern(mockIntern);
-        //     expect(intern.getSchool()).toEqual("Clubhouse University");
-        // });
         it("should return role when getRole function is called", () => {
             const intern = new Intern(mockIntern);
             expect(intern.getRole()).toEqual("Intern");

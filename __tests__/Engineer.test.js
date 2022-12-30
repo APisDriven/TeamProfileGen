@@ -26,20 +26,7 @@ describe("Engineer",() => {
     })
 
     describe("method tests",()=>{
-        // it("should return id when the getId function is called", () => {
-        //     const engineer = new Engineer(mockEngineer);
-        //     expect(engineer.getId()).toEqual("02");
-        // });
 
-        // it("should return name when the getName function is called", ()=> {
-        //     const engineer = new Engineer(mockEngineer);
-        //     expect(engineer.getName()).toEqual("Donald");
-        // });
-
-        // it("should return email when the getEmail function is called", ()=> {
-        //     const engineer = new Engineer(mockEngineer);
-        //     expect(engineer.getEmail()).toEqual("Donald@duck.com");
-        // });
 
         it("should return github link when the getGithub function is called", ()=> {
             const engineer = new Engineer(mockEngineer);

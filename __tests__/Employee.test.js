@@ -21,15 +21,6 @@ describe("Employee", () => {
         });
     })
     describe("method tests", () => {
-        // it("should return id when getId function is called", () => {
-        //     const employee = new Employee(mockEmployee);
-        //     expect(employee.getId()).toEqual("01")
-        // })
-
-        // it("should return name when the getName function is called", () => {
-        //     const employee = new Employee(mockEmployee);
-        //     expect(employee.getName()).toEqual("Mickey");
-        // })
 
         it("should return email when getEmail function is called", () => {
             const employee = new Employee(mockEmployee);
