@@ -125,7 +125,7 @@ const createManager = async()=>{
 
     const managerAnswers = await inquirer.prompt(managerQuestions);
 
-    const manager = new Manager(managerAnswers);
+    const manager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber);
 
     employees.push(manager);
 };
@@ -159,7 +159,7 @@ const createEngineer = async()=>{
     ];
 
     const engineerAnswers = await inquirer.prompt(engineerQuestions);
-    const engineer = new Engineer(engineerAnswers);
+    const engineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github);
 
     employees.push(engineer);
 };
@@ -175,7 +175,7 @@ const createIntern = async()=>{
         {
             type: "input",
             message: "Enter Intern ID:",
-            name: "ID",
+            name: "id",
             validate: validateInput,
         },
         {
@@ -194,7 +194,7 @@ const createIntern = async()=>{
 
     const internAnswers = await inquirer.prompt(internQuestions);
 
-    const intern = new Intern(internAnswers);
+    const intern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
 
     employees.push(intern);
 };

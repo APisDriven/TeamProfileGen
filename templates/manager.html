@@ -1,13 +1,12 @@
-<div>
-    <div class="top-div">
-        <h1>
-            Name <br>
-            Role
-        </h1>   
-    </div>
-    <div class="bottom-div">
-        <div class="stats">ID</div>
-        <div class="stats">Email</div>
-        <div class="stats">Office Nunmber</div>
-    </div>
-</div>
+                <div class="card">
+                    <img src="./Assets/profile-pic.webp" class="card-img-top" alt="genericProfilePic">
+                    <div class="card-body">
+                      <h5 class="card-title">{{name}} <br>
+                        {{role}}</h5>
+                      <p class="card-text">
+                        <div class="stats">Employee ID: {{id}}</div>
+                        <div class="stats">Email: <a href="mailto:{{email}}">{{email}}</a></div>
+                        <div class="stats">Office Number: {{officeNumber}}</div>
+                      </p>
+                    </div>
+                  </div>

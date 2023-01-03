@@ -8,21 +8,20 @@ const templatesDir = path.resolve(__dirname, "../templates")
 
 const generateHTML = (employees)=>{
     const HTML = [];
-    
 
     HTML.push(
         employees
             .filter((employee)=>employee.getRole() === "Manager")
             .map((manager)=>renderManager(manager))
     );
-        employees
+    HTML.push(  employees
             .filter((employee)=>employee.getRole() === "Engineer")
             .map((engineer)=>renderEngineer(engineer)
-    );
-        employees
+    ));
+    HTML.push(  employees
             .filter((employee)=>employee.getRole() === "Intern")
             .map((intern)=>renderIntern(intern)
-    );
+    ));
 
     return renderFullMarkdown(HTML.join(""));
 };
@@ -50,7 +49,7 @@ const renderEngineer = (engineer)=>{
     template = replaceTemplates(template, "id",engineer.getId());
     template = replaceTemplates(template, "role",engineer.getRole());
     template = replaceTemplates(template, "email",engineer.getEmail());
-    template = replaceTemplates(template, "officeNumber",engineer.getGithub());
+    template = replaceTemplates(template, "github",engineer.getGithub());
     return template;
 };
 const renderIntern = (intern)=>{
@@ -63,21 +62,21 @@ const renderIntern = (intern)=>{
     template = replaceTemplates(template, "id",intern.getId());
     template = replaceTemplates(template, "role",intern.getRole());
     template = replaceTemplates(template, "email",intern.getEmail());
-    template = replaceTemplates(template, "officeNumber",intern.getSchool());
+    template = replaceTemplates(template, "school",intern.getSchool());
     return template;
 };
 
 const renderFullMarkdown = (HTML)=>{
     let template = fs.readFileSync(
-        path.resolve(templatesDir, "full-markdown.html"),
+        path.resolve(templatesDir, "team-profile.html"),
         "utf8"
     );
-
     return replaceTemplates(template, "team", HTML);
 };
 
 const replaceTemplates = (template,placeholder,value)=>{
     const pattern = new RegExp(`{{${placeholder}}}`, "gm");
+    console.log(pattern)
     return template.replace(pattern, value);
 }
 module.exports = generateHTML;
